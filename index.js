@@ -3,11 +3,11 @@ import bodyParser from "body-parser";
 import mongoose from "mongoose";
 import cors from 'cors';
 
-import Income from './routes/income_r.js';
-import Requset from './routes/request_r.js';
-import User from './routes/user_r.js';
-import companyRouter from './routes/companyRouter.js';
-import device from "./models/devices.js";
+import Income from './Routes/income_r.js';
+import Requset from './Routes/request_r.js';
+import User from './Routes/user_r.js';
+import companyRouter from './Routes/companyRouter.js';
+import device from "./Routes/device_r.js";
 
 
 import http from 'http';
