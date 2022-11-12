@@ -7,8 +7,8 @@ const router = express.Router();
 
 export const getCompanies = async (req, res) => { 
     try {
-        const Company = await Company.find();     
-        res.status(200).json(Company)
+        const Companys = await Company.find();     
+        res.status(200).json(Companys)
     } catch (error) {
         res.status(404).json({ message: error.message });
     }
@@ -20,9 +20,9 @@ export const getCompanyById = async (req, res) => {
     const id = req.params;
 
     try {
-        const Company = await Company.find(id);
+        const Companys = await Company.find(id);
         
-        res.status(200).json(Company);
+        res.status(200).json(Companys);
     } catch (error) {
         res.status(404).json({ message: error.message });
     }

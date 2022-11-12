@@ -31,9 +31,9 @@ export const login = async (req, res) => {
 
 export const getusers = async (req, res) => {
     try {
-        const user = await user.find();
+        const users = await user.find();
 
-        res.status(200).json(user);
+        res.status(200).json(users);
     } catch (error) {
         res.status(404).json({message: error.message});
     }
@@ -43,9 +43,9 @@ export const getuser = async (req, res) => {
     const {id} = req.params;
 
     try {
-        const user = await user.findById(id);
+        const users = await user.findById(id);
 
-        res.status(200).json(user);
+        res.status(200).json(users);
     } catch (error) {
         res.status(404).json({message: error.message});
     }
@@ -54,7 +54,7 @@ export const getuser = async (req, res) => {
 export const adduser = async (req, res) => {
     const {user_Fname, user_Lname, user_type,user_address,user_Email,user_password,user_NIC,user_phoneNo,ceb_accNo} = req.body;
 
-    const newusers = new user(req.body)
+    const newusers = new user({user_Fname, user_Lname, user_type,user_address,user_Email,user_password,user_NIC,user_phoneNo,ceb_accNo})
 
     try {
         await newusers.save();
